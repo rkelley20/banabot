@@ -5,6 +5,7 @@ import config
 from os import listdir, getcwd
 from os.path import isfile, join
 import traceback
+import sys
 
 
 class BanaContext(commands.Context):
@@ -21,10 +22,10 @@ class BanaContext(commands.Context):
 
     
     async def check(self):
-        self.tick()
+        await self.tick()
     
     async def cross(self):
-        self.tick(False)
+        await self.tick(False)
 
 
 class BanaBot(commands.Bot):
